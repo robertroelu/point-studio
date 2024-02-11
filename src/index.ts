@@ -10,6 +10,8 @@ import { linkblockedit } from '@finsweet/attributes-linkblockedit';
 //Utils
 // import { swipers } from '$utils/swipers';
 import { splides } from '$utils/splides';
+import { hoverAnimation } from '$utils/hover';
+import { timer } from '$utils/timer';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
@@ -18,4 +20,8 @@ window.Webflow.push(() => {
   // modal();
   // swipers();
   splides();
+
+  hoverAnimation();
+
+  timer();
 });
