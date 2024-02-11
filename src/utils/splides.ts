@@ -12,7 +12,7 @@ export const splides = () => {
     pagination: false,
     arrows: false,
     autoScroll: {
-      speed: 0.3,
+      speed: 0.4,
     },
   });
 
