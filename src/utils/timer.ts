@@ -1,4 +1,6 @@
 export const timer = () => {
+  const timeEl = document.querySelector('[time]') as HTMLElement;
+  if (!timeEl) return;
   setInterval(() => {
     const SEtime = new Date(
       new Date().toLocaleString('de-DE', {
@@ -18,7 +20,6 @@ export const timer = () => {
 
     const time = hour + ':' + min + ':' + sec;
 
-    const timeEl = document.querySelector('[time]') as HTMLElement;
     timeEl.textContent = time;
   }, 1000);
 };

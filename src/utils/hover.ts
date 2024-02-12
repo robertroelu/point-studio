@@ -1,6 +1,7 @@
 export const hoverAnimation = () => {
   //Get all elements for hover in
   const allElements = document.querySelectorAll('[hover-in]');
+  if (!allElements) return;
 
   //Separete if it's button or not because the attribute is on text and we need hover on parent element when it's button
   allElements.forEach((el) => {

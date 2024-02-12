@@ -7,8 +7,10 @@ export const animation = () => {
   //   const scrollEl = document.querySelector('[scrollTrigger]');
   //   console.log(scrollEl);
 
+  const headerEl = document.querySelector('.home_header_list');
+  if (!headerEl) return;
   let tween = gsap.fromTo(
-    '.home_header_list',
+    headerEl,
     {
       y: 0,
     },
@@ -16,7 +18,7 @@ export const animation = () => {
       y: -200,
       ease: 'none',
       scrollTrigger: {
-        trigger: '.home_header_list',
+        trigger: headerEl,
         start: 'bottom 30%',
         end: 'bottom 0%',
         scrub: true,
@@ -37,6 +39,7 @@ export const animation = () => {
 
   // Letters animation
   const parentEl = document.querySelectorAll('[animation-start]');
+  if (!parentEl) return;
 
   const images: Array<Node> = [];
   parentEl.forEach((parent) => {
@@ -59,11 +62,11 @@ export const animation = () => {
       image,
       {
         opacity: 0.5,
-        y: +500,
+        y: +750,
       },
       {
         opacity: 1,
-        duration: 1,
+        duration: 1.1,
         y: 0,
         delay: initDelay,
         ease: 'power2.out',

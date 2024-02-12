@@ -1,5 +1,6 @@
 export const video = () => {
   const getLinks = document.querySelectorAll('[video-link]');
+  if (!getLinks) return;
 
   getLinks.forEach((elLink) => {
     const linkValue = elLink.getAttribute('video-link');
