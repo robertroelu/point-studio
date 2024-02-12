@@ -12,6 +12,8 @@ import { linkblockedit } from '@finsweet/attributes-linkblockedit';
 import { splides } from '$utils/splides';
 import { hoverAnimation } from '$utils/hover';
 import { timer } from '$utils/timer';
+import { video } from '$utils/video';
+import { animation } from '$utils/animation';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
@@ -24,4 +26,8 @@ window.Webflow.push(() => {
   hoverAnimation();
 
   timer();
+
+  video();
+
+  animation();
 });
