@@ -6,9 +6,15 @@ export const timer = () => {
       })
     );
 
-    const sec = SEtime.getSeconds();
-    const min = SEtime.getMinutes();
-    const hour = SEtime.getHours();
+    const sec = SEtime.getSeconds().toLocaleString('en-US', {
+      minimumIntegerDigits: 2,
+    });
+    const min = SEtime.getMinutes().toLocaleString('en-US', {
+      minimumIntegerDigits: 2,
+    });
+    const hour = SEtime.getHours().toLocaleString('en-US', {
+      minimumIntegerDigits: 2,
+    });
 
     const time = hour + ':' + min + ':' + sec;
 
