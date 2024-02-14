@@ -1,25 +1,22 @@
+// import moment from 'moment';
+import moment from 'moment-timezone';
+
 export const timer = () => {
-  const timeEl = document.querySelector('[time]') as HTMLElement;
+  const timeEl = document.querySelectorAll('[time]') as NodeListOf<HTMLElement>;
   if (!timeEl) return;
-  setInterval(() => {
-    const SEtime = new Date(
-      new Date().toLocaleString('de-DE', {
-        timeZone: 'Europe/Stockholm',
-      })
-    );
 
-    const sec = SEtime.getSeconds().toLocaleString('en-US', {
-      minimumIntegerDigits: 2,
-    });
-    const min = SEtime.getMinutes().toLocaleString('en-US', {
-      minimumIntegerDigits: 2,
-    });
-    const hour = SEtime.getHours().toLocaleString('en-US', {
-      minimumIntegerDigits: 2,
-    });
+  timeEl.forEach((el) => {
+    setInterval(() => {
+      const seTimezone = moment.tz('Europe/Stockholm');
 
-    const time = hour + ':' + min + ':' + sec;
+      const tens = String(Math.round(seTimezone.milliseconds() / 100));
+      const sec = String(seTimezone.seconds()).padStart(2, '0');
+      const min = String(seTimezone.minutes()).padStart(2, '0');
+      const hour = String(seTimezone.hours()).padStart(2, '0');
 
-    timeEl.textContent = time;
-  }, 1000);
+      const time = hour + ':' + min + ':' + sec + '.' + tens.padStart(2, '0');
+
+      el.textContent = time;
+    }, 100);
+  });
 };
