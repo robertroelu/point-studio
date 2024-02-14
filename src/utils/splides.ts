@@ -16,6 +16,18 @@ export const splides = () => {
     autoScroll: {
       speed: 0.4,
     },
+    mediaQuery: 'max',
+    breakpoints: {
+      479: {
+        perPage: 1,
+      },
+      767: {
+        perPage: 1.5,
+      },
+      991: {
+        perPage: 2,
+      },
+    },
   });
 
   splide.mount({ AutoScroll });
