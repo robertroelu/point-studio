@@ -10,14 +10,14 @@ export const animation = () => {
   const headerEl = document.querySelector('.home_header_list');
   if (!headerEl) return;
 
-  function scrollAnimation(start: string, end: string) {
+  function scrollAnimation(start: string, end: string, y: number) {
     let tween = gsap.fromTo(
       headerEl,
       {
         y: 0,
       },
       {
-        y: -200,
+        y: y,
         ease: 'none',
         scrollTrigger: {
           trigger: headerEl,
@@ -35,22 +35,26 @@ export const animation = () => {
     {
       isPortrait: '(max-width: 467px)',
       isTablet: '(max-width: 1149px)',
+      isDesktopMini: '(max-width: 1440px)',
       isDesktop: '(max-width: 1920px)',
       isDesktopX: '(max-width: 2440px)',
       isDesktopXL: '(min-width: 2441px)',
     },
     (context) => {
-      let { isPortrait, isTablet, isDesktop, isDesktopX, isDesktopXL } = context.conditions;
+      let { isPortrait, isTablet, isDesktopMini, isDesktop, isDesktopX, isDesktopXL } =
+        context.conditions;
       if (isPortrait) {
-        scrollAnimation('bottom 10%', 'bottom -5%');
+        scrollAnimation('bottom 10%', 'bottom -5%', -200);
       } else if (isTablet) {
-        scrollAnimation('bottom 10%', 'bottom 0%');
+        scrollAnimation('bottom 15%', 'bottom 0%', -300);
+      } else if (isDesktopMini) {
+        scrollAnimation('bottom 30%', 'bottom 0%', -400);
       } else if (isDesktop) {
-        scrollAnimation('bottom 30%', 'bottom 0%');
+        scrollAnimation('bottom 30%', 'bottom 0%', -400);
       } else if (isDesktopX) {
-        scrollAnimation('bottom 35%', 'bottom 0%');
+        scrollAnimation('bottom 35%', 'bottom 0%', -600);
       } else if (isDesktopXL) {
-        scrollAnimation('bottom 35%', 'bottom 0%');
+        scrollAnimation('bottom 45%', 'bottom 0%', -800);
       }
     }
   );
