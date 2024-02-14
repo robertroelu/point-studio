@@ -57,6 +57,7 @@
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "gsap": "^3.12.5",
+    "moment-timezone": "^0.5.45",
     "swiper": "^11.0.5"
   },
   "engines": {
