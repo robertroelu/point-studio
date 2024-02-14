@@ -15,11 +15,15 @@ import { hoverAnimation } from '$utils/hover';
 import { timer } from '$utils/timer';
 import { video } from '$utils/video';
 import { animation } from '$utils/animation';
+import { back } from '$utils/back';
+import { scroll } from '$utils/scroll';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
   // nestedElement();
   linkblockedit();
+  back();
+  scroll();
   // modal();
   // swipers();
   splides();
