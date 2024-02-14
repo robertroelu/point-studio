@@ -47,60 +47,28 @@ export const hoverAnimation = () => {
 
   //The animation
   function animation(element: HTMLElement, elText: string) {
-    element.addEventListener('mouseenter', () => {
-      const elArray = createArray(elText);
-      const elArrayNew = createArray(elText);
-      if (!elArray || !elArrayNew) return;
-      const elLength = elArray.length;
-      //   let running = false;
+    const elArray = createArray(elText);
+    const elArrayNew = createArray(elText);
+    if (!elArray || !elArrayNew) return;
+    const elLength = elArray.length;
+    //   let running = false;
 
-      let i = 0;
-      const interval = setInterval(() => {
-        if (i === elLength - 1) clearInterval(interval);
+    let i = 0;
+    const interval = setInterval(() => {
+      if (i === elLength - 1) clearInterval(interval);
 
-        // running = true;
+      // running = true;
 
-        elArray.shift();
-        elArray.push(elArrayNew[i]);
+      elArray.shift();
+      elArray.push(elArrayNew[i]);
 
-        let newText = '';
-        elArray.forEach((string) => {
-          newText += string;
-        });
-        element.textContent = newText;
+      let newText = '';
+      elArray.forEach((string) => {
+        newText += string;
+      });
+      element.textContent = newText;
 
-        i++;
-      }, 60);
-    });
+      i++;
+    }, 60);
   }
-
-  //   elOnHover.forEach((el) => {
-  //     const elText: string = el.textContent as string;
-  //     el.addEventListener('mouseenter', () => {
-  //       const elArray = Array.from(elText);
-  //       const elArrayNew = Array.from(elText);
-  //       const elLength = elArray.length;
-  //       //   let running = false;
-
-  //       let i = 0;
-  //       const interval = setInterval(() => {
-  //         if (i === elLength - 1) clearInterval(interval);
-
-  //         // running = true;
-
-  //         elArray.shift();
-  //         elArray.push(elArrayNew[i]);
-
-  //         let newText = '';
-
-  //         elArray.forEach((string) => {
-  //           newText += string;
-  //         });
-
-  //         el.textContent = newText;
-
-  //         i++;
-  //       }, 50);
-  //     });
-  //   });
 };
