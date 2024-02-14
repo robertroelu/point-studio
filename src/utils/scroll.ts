@@ -3,7 +3,6 @@ export const scroll = () => {
   if (!scrollEl) return;
 
   scrollEl.forEach((el) => {
-    console.log(el);
     el.addEventListener('click', () => {
       window.scrollTo({
         top: 0,
