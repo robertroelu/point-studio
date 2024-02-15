@@ -17,24 +17,24 @@ import { video } from '$utils/video';
 import { animation } from '$utils/animation';
 import { back } from '$utils/back';
 import { scroll } from '$utils/scroll';
+import { cta } from '$utils/cta';
+import { work } from '$utils/work';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
   // nestedElement();
-  linkblockedit();
-  back();
-  scroll();
   // modal();
   // swipers();
-  splides();
-
-  hoverAnimation();
-
-  timer();
-
-  video();
-
+  linkblockedit();
   animation();
+  back();
+  scroll();
+  cta();
+  splides();
+  hoverAnimation();
+  timer();
+  video();
+  work();
 
   restartWebflow();
 });
