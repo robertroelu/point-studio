@@ -4,8 +4,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const animation = () => {
   // Scroll triger animation
-  //   const scrollEl = document.querySelector('[scrollTrigger]');
-  //   console.log(scrollEl);
 
   const headerEl = document.querySelector('.home_header_list');
   if (!headerEl) return;
@@ -37,8 +35,8 @@ export const animation = () => {
       isTablet: '(max-width: 1149px)',
       isDesktopMini: '(max-width: 1440px)',
       isDesktop: '(max-width: 1920px)',
-      isDesktopX: '(max-width: 2440px)',
-      isDesktopXL: '(min-width: 2441px)',
+      isDesktopX: '(max-width: 2560px)',
+      isDesktopXL: '(min-width: 2561px)',
     },
     (context) => {
       let { isPortrait, isTablet, isDesktopMini, isDesktop, isDesktopX, isDesktopXL } =
@@ -48,35 +46,16 @@ export const animation = () => {
       } else if (isTablet) {
         scrollAnimation('bottom 15%', 'bottom 0%', -300);
       } else if (isDesktopMini) {
-        scrollAnimation('bottom 30%', 'bottom 0%', -400);
+        scrollAnimation('bottom 25%', 'bottom 0%', -400);
       } else if (isDesktop) {
         scrollAnimation('bottom 30%', 'bottom 0%', -400);
       } else if (isDesktopX) {
-        scrollAnimation('bottom 35%', 'bottom 0%', -600);
+        scrollAnimation('bottom 30%', 'bottom 0%', -600);
       } else if (isDesktopXL) {
-        scrollAnimation('bottom 45%', 'bottom 0%', -800);
+        scrollAnimation('bottom 30%', 'bottom 0%', -1000);
       }
     }
   );
-
-  // gsap.matchMedia().add('(max-width: 2440px)', () => {
-  //   scrollAnimation('bottom 35%', 'bottom 0%');
-  // });
-
-  // gsap.matchMedia().add('(min-width: 2441px)', () => {
-  //   scrollAnimation('bottom 40%', 'bottom 0%');
-  // });
-
-  //   let tween = gsap.to('.home_header_list', {
-  //     yPercent: -170,
-  //     ease: 'none',
-  //     scrollTrigger: {
-  //       trigger: '.section_home-header',
-  //       start: 'bottom 30%',
-  //       end: 'bottom top',
-  //       scrub: true,
-  //     },
-  //   });
 
   // Letters animation
   const parentEl = document.querySelectorAll('[animation-start]');
@@ -114,23 +93,4 @@ export const animation = () => {
       }
     );
   });
-
-  // From left to right
-  //   let initDelay = 1;
-  //   images.forEach((image) => {
-  //     initDelay += 0.1;
-  //     gsap.fromTo(
-  //       image,
-  //       {
-  //         opacity: 0,
-  //         y: -500,
-  //       },
-  //       {
-  //         opacity: 1,
-  //         duration: 0.5,
-  //         y: 0,
-  //         delay: initDelay,
-  //       }
-  //     );
-  //   });
 };
