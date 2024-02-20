@@ -63,6 +63,10 @@ export const animation = () => {
 
   const images: Array<Node> = [];
   parentEl.forEach((parent) => {
+    // Prevent flashing - in webflow it is set on opacity: 0
+    gsap.to(parent, {
+      opacity: 1,
+    });
     const childEl = parent.querySelectorAll('div');
     childEl.forEach((child) => {
       child.style.opacity = '0';
