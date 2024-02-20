@@ -1,3 +1,5 @@
+import { restartWebflow } from '@finsweet/ts-utils';
+
 import '@splidejs/splide/css';
 import Splide from '@splidejs/splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
@@ -31,4 +33,6 @@ export const splides = () => {
   });
 
   splide.mount({ AutoScroll });
+
+  restartWebflow();
 };
