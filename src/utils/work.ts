@@ -27,7 +27,6 @@ export const work = () => {
     if (getCurrentBreakpoint() === 'small' || getCurrentBreakpoint() === 'tiny') {
       animation(el, delay + 0.2);
     } else {
-      console.log(delay);
       if (index % 3 !== 2) {
         animation(el, delay);
         delay += 0.2;
