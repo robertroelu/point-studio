@@ -1,6 +1,5 @@
 //Finsweet attributes
 import { linkblockedit } from '@finsweet/attributes-linkblockedit';
-import { restartWebflow } from '@finsweet/ts-utils';
 
 //Modal
 // import { modal } from '$modal/modal';
@@ -35,6 +34,4 @@ window.Webflow.push(() => {
   timer();
   video();
   work();
-
-  restartWebflow();
 });
