@@ -10,7 +10,15 @@ export const cta = () => {
   const pageHeight = pageEl.offsetHeight;
   const windowHeight = window.innerHeight;
 
+  const url = window.location;
+  const pathname = url.pathname;
+
   if (pageHeight - 100 > windowHeight) {
+    if (pathname.includes('projects')) {
+      animationIn();
+      return;
+    }
+
     window.onscroll = () => {
       if (window.scrollY > 80) {
         animationIn();
