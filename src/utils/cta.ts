@@ -10,7 +10,7 @@ export const cta = () => {
   const pageHeight = pageEl.offsetHeight;
   const windowHeight = window.innerHeight;
 
-  if (pageHeight + 100 > windowHeight) {
+  if (pageHeight - 100 > windowHeight) {
     window.onscroll = () => {
       if (window.scrollY > 80) {
         animationIn();
