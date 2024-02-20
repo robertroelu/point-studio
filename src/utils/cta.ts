@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 export const cta = () => {
   const pageEl = document.querySelector('.page-wrapper') as HTMLElement;
   const ctaEl = document.querySelector('[cta-scroll]') as HTMLElement;
+  const topEl = document.querySelector('[scroll-top]') as HTMLElement;
   if (!pageEl || !ctaEl) return;
 
   ctaEl.style.opacity = '0';
@@ -15,6 +16,7 @@ export const cta = () => {
 
   if (pageHeight - 100 > windowHeight) {
     if (pathname.includes('projects')) {
+      topEl.style.display = 'none';
       animationIn();
       return;
     }
@@ -27,6 +29,7 @@ export const cta = () => {
       }
     };
   } else {
+    topEl.style.display = 'none';
     animationIn();
   }
 
