@@ -18,6 +18,7 @@ import { back } from '$utils/back';
 import { scroll } from '$utils/scroll';
 import { cta } from '$utils/cta';
 import { work } from '$utils/work';
+import { createdBy } from '$utils/createdBy';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
@@ -34,4 +35,5 @@ window.Webflow.push(() => {
   timer();
   video();
   work();
+  createdBy();
 });
